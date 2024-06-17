@@ -4,18 +4,20 @@
 
 echo "Iniciando a atualização do sistema..."
 
-apt update
-apt upgrade
+apt-get update
+apt-get upgrade -y
 
-echo "Sistema atualizado"
+echo "Sistema atualizado."
 echo "Instalando o servidor de arquivos apache..."
 
-apt install apache2 -y
+apt-get install apache2 -y
 
+echo "Servidor instalado."
 echo "Instalando o unzip..."
 
-apt install unzip -y
+apt-get install unzip -y
 
+echo "Unzip instalado."
 echo "Fazendo o download dos arquivos da aplicação..."
 
 cd /tmp
@@ -30,6 +32,6 @@ cd linux-site-dio-main
 
 echo "Movendo arquivos para a pasta de destino..."
 
-mv * /var/www/html/ -y
+mv -R * /var/www/html/ -y
 
 echo "Finalizado!"
