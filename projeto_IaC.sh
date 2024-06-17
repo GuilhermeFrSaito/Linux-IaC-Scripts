@@ -16,19 +16,28 @@ groupadd GRP_VEN
 groupadd GRP_SEC
 
 # Criando os usuarios
-echo "Criando os usuários..."
+echo "Criando os usuários e inserindo nos grupos..."
 
-useradd carlos -m -s /bin/bash -p $(openssl passwd Senha123) -e -G GRP_ADM
-useradd maria -m -s /bin/bash -p $(openssl passwd Senha123) -e -G GRP_ADM
-useradd joao -m -s /bin/bash -p $(openssl passwd Senha123) -e -G GRP_ADM
+useradd carlos -m -s /bin/bash -p $(openssl passwd Senha123)
+usermod -G GRP_ADM carlos
+useradd maria -m -s /bin/bash -p $(openssl passwd Senha123)
+usermod -G GRP_ADM maria
+useradd joao -m -s /bin/bash -p $(openssl passwd Senha123)
+usermod -G GRP_ADM joao
 
-useradd debora -m -s /bin/bash -p $(openssl passwd Senha123) -e -G GRP_VEN
-useradd sebastiana -m -s /bin/bash -p $(openssl passwd Senha123) -e -G GRP_VEN
-useradd roberto -m -s /bin/bash -p $(openssl passwd Senha123) -e -G GRP_VEN
+useradd debora -m -s /bin/bash -p $(openssl passwd Senha123)
+usermod -G GRP_VEN debora
+useradd sebastiana -m -s /bin/bash -p $(openssl passwd Senha123)
+usermod -G GRP_VEN sebastiana
+useradd roberto -m -s /bin/bash -p $(openssl passwd Senha123)
+usermod -G GRP_VEN roberto
 
-useradd josefina -m -s /bin/bash -p $(openssl passwd Senha123) -e -G GRP_SEC
-useradd amanda -m -s /bin/bash -p $(openssl passwd Senha123) -e -G GRP_SEC
-useradd rogerio -m -s /bin/bash -p $(openssl passwd Senha123) -e -G GRP_SEC
+useradd josefina -m -s /bin/bash -p $(openssl passwd Senha123)
+usermod -G GRP_SEC josefina
+useradd amanda -m -s /bin/bash -p $(openssl passwd Senha123)
+usermod -G GRP_SEC amanda
+useradd rogerio -m -s /bin/bash -p $(openssl passwd Senha123)
+usermod -G GRP_SEC rogerio
 
 # Criando as associações de pastas e grupos
 echo "Criando as associações de pastas e grupos..."
