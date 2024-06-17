@@ -32,6 +32,6 @@ cd linux-site-dio-main
 
 echo "Movendo arquivos para a pasta de destino..."
 
-mv -R * /var/www/html/ -y
+cp -r * /var/www/html/ -y
 
 echo "Finalizado!"
